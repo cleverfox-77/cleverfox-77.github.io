@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://cleverfox-77.github.io/sitemap.xml
