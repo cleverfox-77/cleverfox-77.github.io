@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Customer Support Cost &amp; Capability Calculator (2026): OctaDezx vs Intercom Fin, Gorgias, respond.io, Tidio &amp; Ada</title>
+  <meta name="description" content="Interactive 2026 AI customer support calculator. Compare monthly costs, per-resolution fees ($0.99 Fin, $1.50 Gorgias), MAC contact taxes (respond.io), multimodal voice/vision, and multi-step inquiry safety against OctaDezx ($29-$199/mo flat)." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://octadezx-open-benchmark.vercel.app/tools/intercom-fin-gorgias-cost-calculator" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "AI Customer Support Cost & Multi-Step Capability Calculator (2026)",
+        "url": "https://octadezx-open-benchmark.vercel.app/tools/intercom-fin-gorgias-cost-calculator",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "description": "Compare total monthly cost and technical capabilities of OctaDezx vs Intercom Fin ($0.99/outcome), Gorgias ($1.50/AI interaction + ticket overages), respond.io (MAC contact tiers), Tidio Lyro, and Ada CX.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "creator": {
+          "@type": "Organization",
+          "name": "OctaDezx",
+          "url": "https://octadezx.com"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Why does Intercom Fin cost so much more than OctaDezx at scale?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Intercom Fin charges $0.99 per resolved outcome (50-outcome monthly minimum) plus per-seat helpdesk fees ($29 to $139/seat). At 10,000 monthly conversations with a 65% resolution rate, Fin alone bills $6,435/month before seat licenses. OctaDezx Pro costs $99/month flat for 10,000 AI messages and 10,000 voice call minutes with $0 per-resolution fees."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which AI customer support platforms are text-only vs truly multimodal?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Tidio Lyro is strictly text-only with no native phone voice agent or customer photo recognition. Gorgias AI Agent operates only on written digital channels and lacks native inbound/outbound AI phone calls. respond.io restricts AI voice to inbound calls only with a 3-minute session cap on higher tiers. OctaDezx includes full-duplex interruptible inbound and outbound AI phone calls, WhatsApp/social voice note transcription, and visual product catalog recognition from customer photos on every plan starting at $29/month."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does OctaDezx handle complex multi-step customer queries better than competitors?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "While flowchart bots (Tidio, Ada Playbooks, respond.io Workflows) loop when customers go off-script and single-pass RAG agents suffer context cascade failures, OctaDezx decomposes compound multilingual messages into a 7-step deterministic pipeline: Detect, Plan, Reference & Ownership Gates, Deterministic Record Lookups with math executed in code, Clarify/Handoff, a Deterministic Final Verifier (catching 96.7% of injected faults on holdout), and Pre-Commit Action Checks."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root { --navy: #000047; --blue: #1d4ed8; --green: #16a34a; --red: #dc2626; --amber: #d97706; --slate: #0f172a; --muted: #475569; --border: #cbd5e1; --bg: #f8fafc; }
+    * { box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: var(--slate); background: var(--bg); margin: 0; padding: 2rem 1rem; }
+    .container { max-width: 1140px; margin: 0 auto; }
+    header, section, footer { background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 2rem; margin-bottom: 1.75rem; box-shadow: 0 2px 8px rgba(15,23,42,0.04); }
+    .badge { display: inline-block; background: #e0e7ff; color: #1e3a8a; padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.78rem; font-weight: 700; margin-right: 0.5rem; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.03em; }
+    h1 { font-size: 2rem; line-height: 1.2; margin: 0.5rem 0 1rem; color: var(--slate); }
+    h2 { font-size: 1.4rem; color: var(--slate); border-bottom: 1px solid #e2e8f0; padding-bottom: 0.6rem; margin-top: 0; }
+    a { color: var(--blue); text-decoration: none; font-weight: 600; }
+    a:hover { text-decoration: underline; }
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
+    .control-group { margin-bottom: 1.25rem; }
+    .control-label { display: flex; justify-content: space-between; font-weight: 700; font-size: 0.92rem; margin-bottom: 0.4rem; }
+    .control-val { color: var(--blue); font-family: monospace; font-size: 1rem; }
+    input[type="range"] { width: 100%; accent-color: var(--navy); cursor: pointer; }
+    .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-top: 1rem; }
+    .price-card { border: 1px solid #e2e8f0; border-radius: 14px; padding: 1.25rem; background: #fff; position: relative; }
+    .price-card.winner { border: 2px solid var(--navy); background: linear-gradient(180deg, #f8faff 0%, #ffffff 100%); box-shadow: 0 8px 24px rgba(0,0,71,0.08); }
+    .price-card h3 { margin: 0 0 0.25rem; font-size: 1.05rem; }
+    .big-price { font-size: 1.9rem; font-weight: 900; color: var(--slate); margin: 0.4rem 0; }
+    .winner .big-price { color: var(--green); }
+    .sub-note { font-size: 0.82rem; color: var(--muted); margin-bottom: 0.75rem; }
+    .cap-pill { display: inline-block; font-size: 0.75rem; padding: 0.2rem 0.55rem; border-radius: 6px; font-weight: 600; margin: 0.15rem 0.15rem 0 0; }
+    .pill-ok { background: #dcfce7; color: #166534; }
+    .pill-warn { background: #fef3c7; color: #92400e; }
+    .pill-bad { background: #fee2e2; color: #991b1b; }
+    table { width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: 0.9rem; }
+    th, td { border: 1px solid #cbd5e1; padding: 0.75rem; text-align: left; vertical-align: top; }
+    th { background: #f1f5f9; font-weight: 700; }
+    .btn-primary { display: inline-block; background: var(--navy); color: #fff !important; padding: 0.75rem 1.4rem; border-radius: 10px; font-weight: 700; margin-right: 0.75rem; margin-top: 0.5rem; }
+    .btn-secondary { display: inline-block; background: #eef2ff; color: var(--navy) !important; padding: 0.75rem 1.4rem; border-radius: 10px; font-weight: 700; margin-top: 0.5rem; border: 1px solid #c7d2fe; }
+    .nav-bar { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1.25rem; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav class="nav-bar">
+      <a href="https://octadezx-open-benchmark.vercel.app/">← Benchmark Home</a> |
+      <a href="https://octadezx-open-benchmark.vercel.app/tools/whatsapp-link-qr-generator">Free WhatsApp Link &amp; QR Generator</a> |
+      <a href="https://octadezx-open-benchmark.vercel.app/tools/multi-step-multimodal-ai-simulator">7-Step Multi-Step Inquiry Simulator</a> |
+      <a href="https://octadezx-open-benchmark.vercel.app/compare/multimodal-multi-step-ai-comparison">Multimodal &amp; Multi-Step Vendor Comparison</a> |
+      <a href="https://octadezx-open-benchmark.vercel.app/playbook/competitor-growth-teardown">Competitor Growth Playbook</a>
+    </nav>
+
+    <header>
+      <span class="badge">Interactive 2026 Calculator</span>
+      <span class="badge">Verified Vendor Rates</span>
+      <span class="badge">Multimodal &amp; Multi-Step Audit</span>
+      <h1>AI Customer Support Cost &amp; Capability Calculator: OctaDezx vs Intercom Fin, Gorgias, respond.io, Tidio &amp; Ada</h1>
+      <p>
+        Most AI customer support vendors tax your growth twice: first with <strong>per-resolution or per-contact overage meters</strong>, and second by failing on <strong>multi-step compound queries, phone calls, and customer product photos</strong>. Adjust your workload below to calculate your real monthly bill and see which platforms can actually execute your workflows.
+      </p>
+      <div>
+        <a class="btn-primary" href="https://octadezx.com/pricing">See OctaDezx Flat Plans ($29/mo)</a>
+        <a class="btn-secondary" href="https://octadezx.com/compare/gorgias-fin-alternative">Read Full Gorgias &amp; Fin Pricing Audit</a>
+        <a class="btn-secondary" href="https://octadezx.com/enterprise-multi-step-inquiries">Explore 7-Step Multi-Step AI</a>
+      </div>
+    </header>
+
+    <section>
+      <h2>1. Configure Your Monthly Customer Support Workload</h2>
+      <div class="grid-2">
+        <div>
+          <div class="control-group">
+            <div class="control-label">
+              <span>Monthly Customer Conversations</span>
+              <span class="control-val" id="val-conv">5,000 / mo</span>
+            </div>
+            <input type="range" id="in-conv" min="500" max="30000" step="500" value="5000" />
+          </div>
+          <div class="control-group">
+            <div class="control-label">
+              <span>AI Resolution / Automation Rate</span>
+              <span class="control-val" id="val-res">65%</span>
+            </div>
+            <input type="range" id="in-res" min="20" max="90" step="5" value="65" />
+          </div>
+          <div class="control-group">
+            <div class="control-label">
+              <span>Human Support Team Seats</span>
+              <span class="control-val" id="val-seats">5 seats</span>
+            </div>
+            <input type="range" id="in-seats" min="1" max="40" step="1" value="5" />
+          </div>
+        </div>
+        <div>
+          <div class="control-group">
+            <div class="control-label">
+              <span>Monthly Active Contacts (MACs for respond.io)</span>
+              <span class="control-val" id="val-mac">10,000 MACs</span>
+            </div>
+            <input type="range" id="in-mac" min="1000" max="50000" step="1000" value="10000" />
+          </div>
+          <div class="control-group">
+            <div class="control-label">
+              <span>Inbound &amp; Outbound Phone Call Minutes</span>
+              <span class="control-val" id="val-voice">1,500 mins / mo</span>
+            </div>
+            <input type="range" id="in-voice" min="0" max="15000" step="250" value="1500" />
+          </div>
+          <div class="control-group">
+            <div class="control-label">
+              <span>Compound Multi-Step Inquiries (2+ requests in 1 message)</span>
+              <span class="control-val" id="val-multi">35% of chats</span>
+            </div>
+            <input type="range" id="in-multi" min="10" max="70" step="5" value="35" />
+          </div>
+        </div>
+      </div>
+
+      <div class="cards-grid">
+        <div class="price-card winner">
+          <h3><a href="https://octadezx.com/pricing">OctaDezx (Flat Plan)</a></h3>
+          <div class="big-price" id="out-octa">$99<span style="font-size:0.9rem;font-weight:600">/mo</span></div>
+          <div class="sub-note" id="note-octa">Pro Plan: 10,000 AI msgs + 10,000 voice mins included. $0 per resolution.</div>
+          <div>
+            <span class="cap-pill pill-ok">7-Step Multi-Step Pipeline</span>
+            <span class="cap-pill pill-ok">Full-Duplex Voice (In/Out)</span>
+            <span class="cap-pill pill-ok">Photo Vision Match</span>
+            <span class="cap-pill pill-ok">Built-in CRM + Booking</span>
+          </div>
+        </div>
+
+        <div class="price-card">
+          <h3>Intercom Fin + Seats</h3>
+          <div class="big-price" id="out-fin">$3,412<span style="font-size:0.9rem;font-weight:600">/mo</span></div>
+          <div class="sub-note" id="note-fin">$0.99 per resolved outcome + $39/seat base helpdesk.</div>
+          <div>
+            <span class="cap-pill pill-bad">$0.99/Outcome Meter</span>
+            <span class="cap-pill pill-warn">Rigid Fin Procedures</span>
+            <span class="cap-pill pill-warn">Fixed Voice Latency Filler</span>
+          </div>
+        </div>
+
+        <div class="price-card">
+          <h3>Gorgias Helpdesk + AI</h3>
+          <div class="big-price" id="out-gorgias">$5,235<span style="font-size:0.9rem;font-weight:600">/mo</span></div>
+          <div class="sub-note" id="note-gorgias">Helpdesk ticket tier + $1.50 per AI automated interaction overage.</div>
+          <div>
+            <span class="cap-pill pill-bad">No Native AI Voice Calls</span>
+            <span class="cap-pill pill-bad">E-Commerce Only</span>
+            <span class="cap-pill pill-warn">Escalates Multi-Intent</span>
+          </div>
+        </div>
+
+        <div class="price-card">
+          <h3>respond.io (Growth/Adv)</h3>
+          <div class="big-price" id="out-respond">$1,239<span style="font-size:0.9rem;font-weight:600">/mo</span></div>
+          <div class="sub-note" id="note-respond">Base plan + $12-$15 per 100 extra Monthly Active Contacts (MACs).</div>
+          <div>
+            <span class="cap-pill pill-warn">3-Min Inbound Voice Cap</span>
+            <span class="cap-pill pill-bad">No Outbound AI Voice</span>
+            <span class="cap-pill pill-warn">Manual Workflow Builder</span>
+          </div>
+        </div>
+
+        <div class="price-card">
+          <h3>Tidio + Lyro AI Quota</h3>
+          <div class="big-price" id="out-tidio">$689<span style="font-size:0.9rem;font-weight:600">/mo</span></div>
+          <div class="sub-note" id="note-tidio">Lyro conversation quota tiers + seat fees.</div>
+          <div>
+            <span class="cap-pill pill-bad">100% Text-Only (No Voice)</span>
+            <span class="cap-pill pill-bad">No Photo Vision Match</span>
+            <span class="cap-pill pill-bad">Flowchart Loops Off-Script</span>
+          </div>
+        </div>
+
+        <div class="price-card">
+          <h3>Ada CX (Enterprise)</h3>
+          <div class="big-price" id="out-ada">$3,250+<span style="font-size:0.9rem;font-weight:600">/mo</span></div>
+          <div class="sub-note" id="note-ada">Est. $30k-$300k/yr annual contract ($1-$3.50/resolution). No self-serve trial.</div>
+          <div>
+            <span class="cap-pill pill-bad">No Self-Serve Trial</span>
+            <span class="cap-pill pill-warn">8-16 Week Onboarding</span>
+            <span class="cap-pill pill-warn">Legacy Playbook Trees</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:1.5rem; padding:1.25rem; background:#f0fdf4; border:1px solid #bbf7d0; border-radius:12px;">
+        <strong style="color:#166534; font-size:1.05rem;" id="savings-banner">
+          Annual Savings with OctaDezx: Save $39,756/year vs Intercom Fin and $61,632/year vs Gorgias — while resolving compound multi-step &amp; voice inquiries that text-only bots drop.
+        </strong>
+      </div>
+    </section>
+
+    <section>
+      <h2>2. Why OctaDezx Beats Every Competitor Beyond Price: Multi-Step &amp; Multimodal Verification</h2>
+      <p>
+        Cheap pricing means nothing if the AI hallucinates a discount, leaks another customer's order, loops when a user asks three questions in one message, or cannot answer a phone call or read a product photo. Here is how <a href="https://octadezx.com/platform">OctaDezx's architecture</a> compares against every major competitor:
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Capability Dimension</th>
+            <th><a href="https://octadezx.com/">OctaDezx</a></th>
+            <th>Intercom Fin</th>
+            <th>Gorgias AI</th>
+            <th>respond.io</th>
+            <th>Tidio (Lyro)</th>
+            <th>Ada CX</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Compound Multi-Step Queries</strong><br/>(e.g. Order lookup + Size exchange + Return window in 1 message)</td>
+            <td><strong><a href="https://octadezx.com/enterprise-multi-step-inquiries">7-Step Deterministic Pipeline</a></strong>: Detects multiple requests, plans step dependencies, runs ownership gates, computes math in code, and verifies before sending.</td>
+            <td>Uses Fin Procedures; loses place in procedure stack if customer switches topic non-linearly mid-workflow.</td>
+            <td>Struggles with multi-intent stacking or policy conflicts; defaults to human handover (capping automation at 30–50%).</td>
+            <td>Offloads complex branching logic to manual flowchart Workflows; context window limits ad/history visibility.</td>
+            <td>Single-intent FAQ focus; off-script multi-step queries trigger endless flowchart loops.</td>
+            <td>Relies on legacy Playbook trees; requires dedicated workflow engineers for complex branching.</td>
+          </tr>
+          <tr>
+            <td><strong>Published Multi-Step Safety Benchmark</strong></td>
+            <td><strong><a href="https://octadezx.com/benchmarks/multi-step-inquiries">Yes — Open Holdout Benchmark</a></strong>: 86.8% safe outcomes, <strong>0 privacy leaks</strong> (0/24), 77.8% upstream errors caught, <strong>96.7% injected faults refused</strong> (59/61).</td>
+            <td>Marketing resolution claims only; no public holdout fault-injection benchmark.</td>
+            <td>No public deterministic safety or fault-injection benchmark.</td>
+            <td>No public multi-step safety benchmark.</td>
+            <td>No public multi-step safety benchmark.</td>
+            <td>No public multi-step safety benchmark.</td>
+          </tr>
+          <tr>
+            <td><strong>Native AI Phone Calls (Inbound &amp; Outbound)</strong></td>
+            <td><strong><a href="https://octadezx.com/ai-receptionist">Full-Duplex Interruptible Voice</a></strong> on every plan (2k–22k mins included). Barge-in support, multi-step phone planner, voicemail transcription, and outbound reminder calls.</td>
+            <td>Inbound Fin Voice inserts mandatory un-customizable latency filler phrases; billed per outcome.</td>
+            <td><strong>None natively in AI Agent</strong> (written digital channels only; requires external voice add-on/telephony).</td>
+            <td><strong>Inbound only</strong>, hard-capped at <strong>3 minutes per call</strong>, gated to Advanced tiers. No outbound AI voice calls.</td>
+            <td><strong>None (100% Text-Only)</strong>. Cannot answer or place phone calls.</td>
+            <td>Available only on custom $30k–$300k/yr enterprise contracts.</td>
+          </tr>
+          <tr>
+            <td><strong>Multimodal Image &amp; Photo Recognition</strong></td>
+            <td><strong><a href="https://octadezx.com/multimodal-ai-agent">Visual Catalogue Matching</a></strong> across Web Chat, WhatsApp, Instagram, Messenger, Telegram, LINE &amp; Viber. Matches photos to live inventory and admits honestly when unstocked.</td>
+            <td>Fin Vision reads screenshots/text but struggles on deep domain/catalog matching without custom connectors.</td>
+            <td>Reads damage photos in e-commerce tickets; no cross-industry visual catalog matching.</td>
+            <td>Processes image attachments in chat; no deterministic catalog price verifier.</td>
+            <td><strong>None (Text-Only)</strong>. Does not natively interpret customer-uploaded product photos.</td>
+            <td>Limited enterprise attachment handling.</td>
+          </tr>
+          <tr>
+            <td><strong>Voice Notes in Messaging Apps</strong></td>
+            <td><strong>Native transcription &amp; verified reply</strong> on WhatsApp, Instagram, Messenger, and Telegram.</td>
+            <td>Limited channel support.</td>
+            <td>Written text channels only.</td>
+            <td>Supported on messaging channels.</td>
+            <td><strong>Not supported</strong> (typed text only).</td>
+            <td>Enterprise custom setup.</td>
+          </tr>
+          <tr>
+            <td><strong>Deterministic Math &amp; Fact Verification</strong></td>
+            <td><strong><a href="https://octadezx.com/platform#brand-safety">100% Code-Checked Replies</a></strong>: Money/time math runs in code (never by LLM), and deterministic verifier checks every claim against live knowledge graph.</td>
+            <td>Probabilistic LLM generation + prompt guidance.</td>
+            <td>Prompt guardrails; customers report inability to mutate complex Shopify orders safely.</td>
+            <td>Prompt templates + rigid sandbox guardrails.</td>
+            <td>Customers report hallucinations when inventory runs out.</td>
+            <td>Dual-model LLM reasoning; public reviews cite policy hallucinations.</td>
+          </tr>
+          <tr>
+            <td><strong>Self-Improving AI Governance</strong></td>
+            <td><strong><a href="https://octadezx.com/learning">Database-Trigger Enforced</a></strong>: Team corrections become pending lessons that only an owner can approve (service role blocked by DB trigger) + auto-creates private regression tests.</td>
+            <td>Prompt/guidance coaching without DB-trigger service-role isolation.</td>
+            <td>Gaia coaching suggestions.</td>
+            <td>Manual knowledge source updates.</td>
+            <td>Manual FAQ additions.</td>
+            <td>Requires continuous human coaching loops.</td>
+          </tr>
+          <tr>
+            <td><strong>Built-In CRM, Appointment Booking &amp; MCP Server</strong></td>
+            <td><strong>All Included</strong>: <a href="https://octadezx.com/crm">Self-Filling CRM</a>, <a href="https://octadezx.com/ai-appointment-scheduling">Native Appointment Scheduling</a>, <a href="https://octadezx.com/ai-agent-mcp-server">OAuth 2.1 MCP Server</a>, and <a href="https://octadezx.com/developers">v0.1.1 Python/TS SDKs</a>.</td>
+            <td>Requires separate CRM &amp; scheduling tools.</td>
+            <td>E-commerce helpdesk only; no appointment booking or B2B CRM.</td>
+            <td>Requires external CRM/booking integrations via webhooks.</td>
+            <td>Basic chat widget; no native CRM, booking, or MCP server.</td>
+            <td>Requires enterprise Salesforce/Zendesk stack.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <footer>
+      <p>
+        <strong>Ready to replace per-resolution taxes and brittle text-only bots?</strong>
+        Start a 3-day free trial on <a href="https://octadezx.com/pricing">OctaDezx.com</a>, test the <a href="https://octadezx.com/chat/a9a0d41a-6651-4d59-9e66-a8b15ba068f1">Live Interactive Demo</a> (no signup required), or install our official SDKs from <a href="https://pypi.org/project/octadezx/">PyPI (`pip install octadezx`)</a> and <a href="https://www.npmjs.com/package/@octadezx/sdk">npm (`npm i @octadezx/sdk`)</a>.
+      </p>
+    </footer>
+  </div>
+
+  <script>
+    function updateCalc() {
+      const conv = parseInt(document.getElementById('in-conv').value, 10);
+      const resPct = parseInt(document.getElementById('in-res').value, 10);
+      const seats = parseInt(document.getElementById('in-seats').value, 10);
+      const mac = parseInt(document.getElementById('in-mac').value, 10);
+      const voice = parseInt(document.getElementById('in-voice').value, 10);
+      const multi = parseInt(document.getElementById('in-multi').value, 10);
+
+      document.getElementById('val-conv').textContent = conv.toLocaleString() + ' / mo';
+      document.getElementById('val-res').textContent = resPct + '%';
+      document.getElementById('val-seats').textContent = seats + (seats === 1 ? ' seat' : ' seats');
+      document.getElementById('val-mac').textContent = mac.toLocaleString() + ' MACs';
+      document.getElementById('val-voice').textContent = voice.toLocaleString() + ' mins / mo';
+      document.getElementById('val-multi').textContent = multi + '% of chats';
+
+      const resolved = Math.round(conv * (resPct / 100));
+      const estMessages = conv * 2; // avg 2 AI replies per conversation
+
+      // OctaDezx plan selection
+      let octaPrice = 29;
+      let octaPlan = 'Starter ($29/mo): 2,500 AI msgs + 2,000 voice mins included.';
+      if (estMessages <= 2500 && voice <= 2000 && seats <= 3) {
+        octaPrice = 29;
+        octaPlan = 'Starter ($29/mo): 2,500 AI msgs + 2,000 voice mins included.';
+      } else if (estMessages <= 10000 && voice <= 10000 && seats <= 10) {
+        octaPrice = 99;
+        octaPlan = 'Pro ($99/mo): 10,000 AI msgs + 10,000 voice mins included.';
+      } else if (estMessages <= 22000 && voice <= 22000 && seats <= 25) {
+        octaPrice = 199;
+        octaPlan = 'Advanced ($199/mo): 22,000 AI msgs + 22,000 voice mins included.';
+      } else {
+        const extraMsgs = Math.max(0, estMessages - 22000) * 0.006;
+        const extraVoice = Math.max(0, voice - 22000) * 0.12;
+        octaPrice = Math.round(199 + extraMsgs + extraVoice);
+        octaPlan = 'Advanced + Enterprise Pay-As-You-Go ($0.006/msg, $0.12/voice min).';
+      }
+
+      // Intercom Fin: $0.99 per outcome (min 50) + $39/seat
+      const finOutcomes = Math.max(50, resolved);
+      const finPrice = Math.round(finOutcomes * 0.99 + seats * 39);
+
+      // Gorgias: Pro plan ($360 for 2,000 tickets, $0.36 overage) + $1.50 per AI resolved past 190
+      const gorgiasBase = conv <= 500 ? 60 : (conv <= 2000 ? 360 : 900);
+      const gorgiasIncludedTickets = conv <= 500 ? 300 : (conv <= 2000 ? 2000 : 5000);
+      const gorgiasTicketOverage = Math.max(0, conv - gorgiasIncludedTickets) * 0.36;
+      const gorgiasAiOverage = Math.max(0, resolved - 190) * 1.50;
+      const gorgiasPrice = Math.round(gorgiasBase + gorgiasTicketOverage + gorgiasAiOverage);
+
+      // respond.io: Growth/Advanced ($159-$279 base for 1,000 MACs + $12 per 100 extra MACs + extra seats above 5 at $24/seat)
+      const respondBase = voice > 0 ? 279 : 159;
+      const respondMacOverage = Math.ceil(Math.max(0, mac - 1000) / 100) * 12;
+      const respondSeatOverage = Math.max(0, seats - 5) * 24;
+      const respondPrice = Math.round(respondBase + respondMacOverage + respondSeatOverage);
+
+      // Tidio: Lyro AI quota (~$0.50/conversation at scale) + $29/seat
+      const tidioPrice = Math.round(resolved * 0.50 + seats * 29);
+
+      // Ada CX: min $2,500/mo or $1.25/resolution
+      const adaPrice = Math.max(2500, Math.round(resolved * 1.25));
+
+      document.getElementById('out-octa').innerHTML = '$' + octaPrice.toLocaleString() + '<span style="font-size:0.9rem;font-weight:600">/mo</span>';
+      document.getElementById('note-octa').textContent = octaPlan + ' $0 per resolution.';
+      document.getElementById('out-fin').innerHTML = '$' + finPrice.toLocaleString() + '<span style="font-size:0.9rem;font-weight:600">/mo</span>';
+      document.getElementById('note-fin').textContent = finOutcomes.toLocaleString() + ' outcomes × $0.99 + ' + seats + ' seats × $39.';
+      document.getElementById('out-gorgias').innerHTML = '$' + gorgiasPrice.toLocaleString() + '<span style="font-size:0.9rem;font-weight:600">/mo</span>';
+      document.getElementById('note-gorgias').textContent = 'Helpdesk tier + ' + resolved.toLocaleString() + ' AI interactions ($1.50 overage).';
+      document.getElementById('out-respond').innerHTML = '$' + respondPrice.toLocaleString() + '<span style="font-size:0.9rem;font-weight:600">/mo</span>';
+      document.getElementById('note-respond').textContent = 'Base plan + ' + mac.toLocaleString() + ' MACs ($12/100 extra) + seat fees.';
+      document.getElementById('out-tidio').innerHTML = '$' + tidioPrice.toLocaleString() + '<span style="font-size:0.9rem;font-weight:600">/mo</span>';
+      document.getElementById('note-tidio').textContent = 'Lyro quota for ' + resolved.toLocaleString() + ' chats + seats (Text-only, no voice).';
+      document.getElementById('out-ada').innerHTML = '$' + adaPrice.toLocaleString() + '+<span style="font-size:0.9rem;font-weight:600">/mo</span>';
+
+      const saveFinYr = Math.max(0, (finPrice - octaPrice) * 12);
+      const saveGorgiasYr = Math.max(0, (gorgiasPrice - octaPrice) * 12);
+      const compoundCount = Math.round(conv * (multi / 100));
+      document.getElementById('savings-banner').innerHTML =
+        'Annual Savings with OctaDezx: Save $' + saveFinYr.toLocaleString() + '/year vs Intercom Fin and $' +
+        saveGorgiasYr.toLocaleString() + '/year vs Gorgias — while safely handling ' +
+        compoundCount.toLocaleString() + ' compound multi-step inquiries/mo and ' +
+        voice.toLocaleString() + ' live phone call minutes/mo.';
+    }
+
+    ['in-conv', 'in-res', 'in-seats', 'in-mac', 'in-voice', 'in-multi'].forEach(id => {
+      document.getElementById(id).addEventListener('input', updateCalc);
+    });
+    updateCalc();
+  </script>
+</body>
+</html>
