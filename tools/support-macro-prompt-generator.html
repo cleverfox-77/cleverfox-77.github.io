@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free AI Customer Support System Prompt &amp; Deterministic Guardrail Generator (2026) | OctaDezx</title>
+  <meta name="description" content="Generate production-ready AI customer support policies, escalation rules, and multi-step guardrails for E-Commerce (Shopify/WooCommerce), SaaS, Healthcare Clinics, Salons, and Fintech. Built by OctaDezx." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://octadezx-open-benchmark.vercel.app/tools/support-macro-prompt-generator" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Free AI Customer Support System Prompt & Guardrail Generator",
+    "url": "https://octadezx-open-benchmark.vercel.app/tools/support-macro-prompt-generator",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "creator": { "@type": "Organization", "name": "OctaDezx", "url": "https://octadezx.com" }
+  }
+  </script>
+  <style>
+    :root { --navy: #000047; --blue: #1d4ed8; --slate: #0f172a; --muted: #475569; --bg: #f8fafc; }
+    * { box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: var(--slate); background: var(--bg); margin: 0; padding: 2rem 1rem; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    header, section, footer { background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 2rem; margin-bottom: 1.75rem; box-shadow: 0 2px 8px rgba(15,23,42,0.04); }
+    .badge { display: inline-block; background: #e0e7ff; color: #1e3a8a; padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.78rem; font-weight: 700; margin-right: 0.5rem; margin-bottom: 0.5rem; text-transform: uppercase; }
+    h1 { font-size: 1.95rem; margin: 0.5rem 0 1rem; }
+    h2 { font-size: 1.35rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 0.6rem; margin-top: 0; }
+    a { color: var(--blue); text-decoration: none; font-weight: 600; }
+    a:hover { text-decoration: underline; }
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
+    label { display: block; font-weight: 700; font-size: 0.9rem; margin-bottom: 0.35rem; }
+    input[type="text"], select { width: 100%; padding: 0.75rem; border: 1px solid #cbd5e1; border-radius: 10px; font-size: 0.95rem; margin-bottom: 1rem; }
+    .code-out { background: #0f172a; color: #e2e8f0; padding: 1.1rem; border-radius: 10px; font-family: monospace; font-size: 0.84rem; white-space: pre-wrap; margin-bottom: 0.75rem; }
+    .btn-primary { display: inline-block; background: var(--navy); color: #fff !important; padding: 0.7rem 1.3rem; border-radius: 10px; font-weight: 700; border: none; cursor: pointer; font-size: 0.9rem; }
+    .nav-bar { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1.25rem; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav class="nav-bar">
+      <a href="https://octadezx-open-benchmark.vercel.app/">← Benchmark Home</a> |
+      <a href="https://octadezx-open-benchmark.vercel.app/tools/intercom-fin-gorgias-cost-calculator">AI Cost &amp; Capability Calculator</a> |
+      <a href="https://octadezx-open-benchmark.vercel.app/tools/whatsapp-link-qr-generator">WhatsApp Link &amp; QR Generator</a> |
+      <a href="https://octadezx-open-benchmark.vercel.app/tools/multi-step-multimodal-ai-simulator">7-Step Multi-Step Inquiry Simulator</a> |
+      <a href="https://octadezx-open-benchmark.vercel.app/compare/multimodal-multi-step-ai-comparison">Multimodal &amp; Multi-Step Vendor Comparison</a>
+    </nav>
+
+    <header>
+      <span class="badge">Free CX Ops Tool</span>
+      <span class="badge">Gorgias Playbook Alternative</span>
+      <h1>Free AI Customer Support Policy, Macro &amp; Multi-Step Guardrail Generator</h1>
+      <p>
+        Generate structured support policies, escalation triggers, and deterministic brand-safety rules for your industry. Remember: a prompt alone cannot stop an LLM from guessing a price or approving an unauthorized refund — pair these rules with <a href="https://octadezx.com/platform#brand-safety">OctaDezx's Deterministic Code Verifier</a> and <a href="https://octadezx.com/enterprise-multi-step-inquiries">7-Step Multi-Step Pipeline</a>.
+      </p>
+    </header>
+
+    <section>
+      <h2>1. Configure Your Industry &amp; Operational Rules</h2>
+      <div class="grid-2">
+        <div>
+          <label for="g-ind">Industry Vertical</label>
+          <select id="g-ind">
+            <option value="ecommerce">E-Commerce &amp; Shopify / WooCommerce Retail</option>
+            <option value="saas">B2B SaaS &amp; Software Platform</option>
+            <option value="healthcare">Healthcare, Dental Clinic &amp; Medical Spa</option>
+            <option value="salon">Beauty Salon, Wellness &amp; Hospitality</option>
+            <option value="fintech">Fintech &amp; Regulated Financial Services</option>
+          </select>
+
+          <label for="g-brand">Brand Name</label>
+          <input type="text" id="g-brand" value="Merrell Leather Co." />
+
+          <label for="g-return">Return / Cancellation Window</label>
+          <input type="text" id="g-return" value="30 days from delivery (unworn, original packaging)" />
+
+          <label for="g-hours">Operating &amp; Phone Hours</label>
+          <input type="text" id="g-hours" value="Mon–Sat 9:00–18:00, Sun 10:00–16:00" />
+        </div>
+
+        <div>
+          <label>Generated Multi-Step &amp; Multimodal Policy Spec:</label>
+          <div class="code-out" id="g-out"></div>
+          <button type="button" class="btn-primary" onclick="navigator.clipboard.writeText(document.getElementById('g-out').textContent)">Copy Policy Spec</button>
+          <a class="btn-primary" style="background:#16a34a;margin-left:0.5rem;" href="https://octadezx.com/auth">Deploy in OctaDezx (3-Day Free Trial) ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>
+        Explore <a href="https://octadezx.com/industries/ecommerce">E-Commerce AI Support</a>, <a href="https://octadezx.com/ai-customer-support-for-saas">SaaS AI Support</a>, <a href="https://octadezx.com/industries/healthcare">Healthcare Receptionist AI</a>, <a href="https://octadezx.com/industries/beauty-salons">Beauty Salon Booking Bot</a>, and <a href="https://octadezx.com/pricing">OctaDezx Pricing ($29/mo)</a>.
+      </p>
+    </footer>
+  </div>
+
+  <script>
+    function genPrompt() {
+      const ind = document.getElementById('g-ind').value;
+      const brand = document.getElementById('g-brand').value || 'Our Business';
+      const ret = document.getElementById('g-return').value || '30 days';
+      const hrs = document.getElementById('g-hours').value || 'Mon-Fri 9:00-17:00';
+
+      const verticalSpecific = {
+        ecommerce: `- CATALOGUE & VISUAL SEARCH: Match customer-uploaded product photos on Web Chat, WhatsApp, or Instagram against verified SKUs. If an item is not stocked, state plainly that ${brand} does not carry it and suggest the closest verified SKU.\n- MULTI-STEP ORDER & EXCHANGE: When a customer asks about order status + size swap + return window in one message, verify order ownership first, check live size stock, and calculate return eligibility (${ret}) in deterministic code.`,
+        saas: `- TECHNICAL TRIAGE & BILLING: Verify workspace ownership before discussing invoice or seat counts. Never invent API endpoints or SLA credits.\n- MCP & ESCALATION: Attach full conversation trace and repro steps when escalating P1 bugs to engineering.`,
+        healthcare: `- PATIENT PRIVACY & BOOKING GATES: Only discuss an existing appointment with the verified patient it belongs to. Capture new appointment requests (${hrs}) for clinic confirmation without giving medical diagnoses.`,
+        salon: `- MULTIMODAL APPOINTMENT BOOKING: Accept treatment inquiries, style reference photos on Instagram/WhatsApp, and inbound phone calls (${hrs}). Log booking slots and send scheduled reminder calls with spoken opt-out.`,
+        fintech: `- PSD2 / CFPB DISPUTE GUARDRAILS: Compute all transaction amounts and dates in code. Never approve a refund or chargeback reversal autonomously; escalate disputes to compliance reviewers with the full 7-step audit trace.`
+      }[ind];
+
+      document.getElementById('g-out').textContent =
+`# ${brand} — OctaDezx Deterministic Agent & Multi-Step Policy Spec
+OPERATING HOURS: ${hrs}
+RETURN / CANCELLATION POLICY: ${ret}
+
+1. MULTI-STEP COMPOUND INQUIRY RULES:
+- Split messages containing 2+ requests into ordered steps (Detect -> Plan -> Ownership Gate -> Deterministic Lookup -> Clarify -> Verify -> Pre-Commit Check).
+- Perform all currency, discount, and date-window calculations in code from verified records.
+
+2. INDUSTRY-SPECIFIC MULTIMODAL WORKFLOWS:
+${verticalSpecific}
+
+3. BRAND SAFETY & ESCALATION:
+- Never invent prices, discount codes, delivery windows, or unconfirmed bookings.
+- Never approve a monetary refund autonomously; file a verified request for human review.
+- On live phone calls, allow immediate mid-sentence caller interruption and log the full transcript to the unified customer CRM.`;
+    }
+
+    ['g-ind', 'g-brand', 'g-return', 'g-hours'].forEach(id => {
+      document.getElementById(id).addEventListener('input', genPrompt);
+    });
+    genPrompt();
+  </script>
+</body>
+</html>
